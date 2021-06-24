@@ -8,6 +8,7 @@ namespace Analyze_Mood
         {
             Console.WriteLine("Welcome to Mood analyzer System");
             Analysis analysis = new Analysis("I am  Mood");
+            Analysis objectAnalysis = new Analysis();
             Console.ReadKey();
         }
     }

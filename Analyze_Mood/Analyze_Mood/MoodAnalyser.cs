@@ -5,25 +5,52 @@ using MoodAnalyserException;
 
 namespace Analyze_Mood
 {
-    
-        public class Analysis
+
+    public class Analysis
+    {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Analysis()
         {
-            public Analysis(string userInput)
+            try
             {
-                try
-                {
-                    if (userInput == "I am sad Mood")
-                    {
-                        throw new SadMoodAnalyserException("SAD");
-                    }
-                    throw new HappyMoodAnalyserException("HAPPY");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
+                throw new HappyMoodAnalyserException("HAPPY");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
+
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        /// <param name="userInput"></param>
+        public Analysis(string userInput)
+        {
+            try
+            {
+                if (userInput == "sad")
+                {
+                    throw new SadMoodAnalyserException("SAD");
+                }
+                if (userInput == "happy")
+                {
+                    throw new HappyMoodAnalyserException("HAPPY");
+                }
+                else
+                {
+                    throw new InvalidMoodAnalyserException("null");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        
+    }
     
 }
 

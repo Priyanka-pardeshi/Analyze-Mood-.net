@@ -16,4 +16,11 @@ namespace MoodAnalyserException
         { 
         }
     }
+    class InvalidMoodAnalyserException : Exception
+    {
+        public InvalidMoodAnalyserException(string msg):base(msg)
+        {
+            
+        }
+    }
 }
